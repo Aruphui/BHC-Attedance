@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Admin Dashboard</h2>
+
+    <form method="get" action="/admin-dashboard" class="search-bar">
+      <input type="text" name="search" placeholder="Search by username..." value="<%= typeof search !== 'undefined' ? search : '' %>">
+      <button type="submit" class="btn">Search</button>
+    </form>
+
+    <h3>Users and Last Punch-in</h3>
+    <table class="modern-table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Last Punch-in</th>
+          <th colspan="3">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr>
+            <td><%= user.username %></td>
+            <td><%= user.lastPunch ? user.lastPunch : "No Punch-in Yet" %></td>
+            <td><a href="/admin/user/<%= user.id %>" class="btn">View History</a></td>
+            <td><a href="/admin/export/csv/<%= user.id %>" class="btn">Export CSV</a></td>
+            <td><a href="/admin/export/pdf/<%= user.id %>" class="btn">Export PDF</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User History</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2><%= username %>'s Attendance History</h2>
+    <a href="/admin-dashboard" class="btn">Back</a>
+    <a href="/admin/export/csv/<%= userId %>" class="btn">Export CSV</a>
+    <a href="/admin/export/pdf/<%= userId %>" class="btn">Export PDF</a>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% logs.forEach(log => { %>
+          <tr>
+            <td><%= log.date %></td>
+            <td><%= log.time %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

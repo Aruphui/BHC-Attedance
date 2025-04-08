@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+  <div class="container">
+    <h2>Admin Panel</h2>
+    <% if (typeof error !== 'undefined') { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form action="/create-user" method="POST">
+      <input name="username" placeholder="New Username" required>
+      <input name="password" type="password" placeholder="Password" required>
+      <select name="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button type="submit">Create User</button>
+    </form>
+    <a href="/dashboard">← Back to Dashboard</a>
+    <a href="/admin-dashboard" class="btn">View Attendance Logs</a>
+
+  </div>
+</body>
+</html>
