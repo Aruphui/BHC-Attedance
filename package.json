@@ -1,20 +1,22 @@
 {
-  "name": "gym-attendance",
+  "name": "bhc-attendance",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gym Attendance System - Bhadrak Health Club",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Aruphui/BHC-Attedance.git"
+    "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Aruphui/BHC-Attedance/issues"
-  },
-  "homepage": "https://github.com/Aruphui/BHC-Attedance#readme"
+  "author": "Arup Jyoti Hui",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "json2csv": "^6.0.0",
+    "pdfkit": "^0.15.0",
+    "sqlite3": "^5.1.6"
+  }
 }
